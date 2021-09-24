@@ -5,4 +5,11 @@
 //  Created by Nadzeya Shpakouskaya on 24/09/2021.
 //
 
-import Foundation
+struct Exchange: Codable {
+    
+    let exchangeId: String
+    let name: String
+    let website: String
+    let volume: Double
+    
+}
