@@ -13,6 +13,9 @@
 		FD10152226FDB38200DDCFAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD10152026FDB38200DDCFAC /* Main.storyboard */; };
 		FD10152426FDB38500DDCFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD10152326FDB38500DDCFAC /* Assets.xcassets */; };
 		FD10152726FDB38500DDCFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD10152526FDB38500DDCFAC /* LaunchScreen.storyboard */; };
+		FD10153226FDBDF700DDCFAC /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10153126FDBDF700DDCFAC /* Exchange.swift */; };
+		FD10153426FDBE0200DDCFAC /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10153326FDBE0200DDCFAC /* Market.swift */; };
+		FD10153726FDC34D00DDCFAC /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10153626FDC34D00DDCFAC /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		FD10152326FDB38500DDCFAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD10152626FDB38500DDCFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD10152826FDB38500DDCFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD10153126FDBDF700DDCFAC /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
+		FD10153326FDBE0200DDCFAC /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
+		FD10153626FDC34D00DDCFAC /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,50 @@
 		FD10151926FDB38200DDCFAC /* CryptoMarkets */ = {
 			isa = PBXGroup;
 			children = (
-				FD10151A26FDB38200DDCFAC /* AppDelegate.swift */,
-				FD10151C26FDB38200DDCFAC /* SceneDelegate.swift */,
-				FD10151E26FDB38200DDCFAC /* ViewController.swift */,
-				FD10152026FDB38200DDCFAC /* Main.storyboard */,
+				FD10152E26FDBD6A00DDCFAC /* App */,
+				FD10152F26FDBD7500DDCFAC /* ViewControllers */,
+				FD10153026FDBD8B00DDCFAC /* Storyboards */,
 				FD10152326FDB38500DDCFAC /* Assets.xcassets */,
-				FD10152526FDB38500DDCFAC /* LaunchScreen.storyboard */,
-				FD10152826FDB38500DDCFAC /* Info.plist */,
+				FD10153526FDBE0800DDCFAC /* Models */,
 			);
 			path = CryptoMarkets;
+			sourceTree = "<group>";
+		};
+		FD10152E26FDBD6A00DDCFAC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FD10151A26FDB38200DDCFAC /* AppDelegate.swift */,
+				FD10151C26FDB38200DDCFAC /* SceneDelegate.swift */,
+				FD10152826FDB38500DDCFAC /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FD10152F26FDBD7500DDCFAC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD10151E26FDB38200DDCFAC /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FD10153026FDBD8B00DDCFAC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FD10152026FDB38200DDCFAC /* Main.storyboard */,
+				FD10152526FDB38500DDCFAC /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FD10153526FDBE0800DDCFAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD10153126FDBDF700DDCFAC /* Exchange.swift */,
+				FD10153626FDC34D00DDCFAC /* Currency.swift */,
+				FD10153326FDBE0200DDCFAC /* Market.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD10153726FDC34D00DDCFAC /* Currency.swift in Sources */,
+				FD10153226FDBDF700DDCFAC /* Exchange.swift in Sources */,
 				FD10151F26FDB38200DDCFAC /* ViewController.swift in Sources */,
 				FD10151B26FDB38200DDCFAC /* AppDelegate.swift in Sources */,
 				FD10151D26FDB38200DDCFAC /* SceneDelegate.swift in Sources */,
+				FD10153426FDBE0200DDCFAC /* Market.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +335,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93336KV4Q7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CryptoMarkets/Info.plist;
+				INFOPLIST_FILE = CryptoMarkets/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +363,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93336KV4Q7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CryptoMarkets/Info.plist;
+				INFOPLIST_FILE = CryptoMarkets/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
