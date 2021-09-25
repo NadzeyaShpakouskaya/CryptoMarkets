@@ -10,7 +10,8 @@ struct Market: Codable {
     let exchange_id: String
     let symbol: String
     let base_asset: String
-    let price: Double
+    let quote_asset: String
+    let price_unconverted: Double
     let change_24h: Double
     let volume_24h: Double
     

@@ -120,8 +120,8 @@ class NetworkManager {
         }.resume()
     }
     
-    func fetchCurrencyBy(id: String, completion: @escaping (Result<Currency, Error>) -> ()) {
-        guard let url = URL(string: Constants.basicURL + Route.currenciesAll.rawValue + "/" + id) else {
+    func fetchMarketsForCurrencyBy(id: String, completion: @escaping (Result<[Market], Error>) -> ()) {
+        guard let url = URL(string: Constants.basicURL + Route.currenciesAll.rawValue + "/" + id + "/markets") else {
             print("URL was not generated.")
             return
         }
@@ -132,8 +132,8 @@ class NetworkManager {
             }
             do {
                 let decoder = JSONDecoder()
-                let info = try decoder.decode(CurrencyDescription.self, from: data)
-                completion(.success(info.asset))
+                let info = try decoder.decode(AllMarketsDescription.self, from: data)
+                completion(.success(info.markets))
             } catch let error {
                 completion(.failure(error))
                 print(error.localizedDescription)
