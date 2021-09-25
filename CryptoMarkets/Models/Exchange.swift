@@ -7,9 +7,17 @@
 
 struct Exchange: Codable {
     
-    let exchangeId: String
+    let exchange_id: String
     let name: String
     let website: String
-    let volume: Double
+    let volume_24h: Double
     
+}
+
+struct ExchangeDescription: Codable {
+    let exchange: Exchange
+}
+
+struct AllExchangesDescription: Codable {
+    let exchanges: [Exchange]
 }

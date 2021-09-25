@@ -16,6 +16,7 @@
 		FD10153226FDBDF700DDCFAC /* Exchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10153126FDBDF700DDCFAC /* Exchange.swift */; };
 		FD10153426FDBE0200DDCFAC /* Market.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10153326FDBE0200DDCFAC /* Market.swift */; };
 		FD10153726FDC34D00DDCFAC /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10153626FDC34D00DDCFAC /* Currency.swift */; };
+		FD10153926FED87C00DDCFAC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10153826FED87C00DDCFAC /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FD10153126FDBDF700DDCFAC /* Exchange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exchange.swift; sourceTree = "<group>"; };
 		FD10153326FDBE0200DDCFAC /* Market.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Market.swift; sourceTree = "<group>"; };
 		FD10153626FDC34D00DDCFAC /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		FD10153826FED87C00DDCFAC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				FD10152F26FDBD7500DDCFAC /* ViewControllers */,
 				FD10153026FDBD8B00DDCFAC /* Storyboards */,
 				FD10152326FDB38500DDCFAC /* Assets.xcassets */,
+				FD10153A26FED88200DDCFAC /* Services */,
 				FD10153526FDBE0800DDCFAC /* Models */,
 			);
 			path = CryptoMarkets;
@@ -106,6 +109,14 @@
 				FD10153326FDBE0200DDCFAC /* Market.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FD10153A26FED88200DDCFAC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FD10153826FED87C00DDCFAC /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				FD10153726FDC34D00DDCFAC /* Currency.swift in Sources */,
 				FD10153226FDBDF700DDCFAC /* Exchange.swift in Sources */,
 				FD10151F26FDB38200DDCFAC /* ViewController.swift in Sources */,
+				FD10153926FED87C00DDCFAC /* NetworkManager.swift in Sources */,
 				FD10151B26FDB38200DDCFAC /* AppDelegate.swift in Sources */,
 				FD10151D26FDB38200DDCFAC /* SceneDelegate.swift in Sources */,
 				FD10153426FDBE0200DDCFAC /* Market.swift in Sources */,

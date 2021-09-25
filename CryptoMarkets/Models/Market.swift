@@ -7,15 +7,15 @@
 
 struct Market: Codable {
     
-    let exchangeId: String
+    let exchange_id: String
     let symbol: String
-    let baseAsset: String
+    let base_asset: String
     let price: Double
-    let change24h: Double
-    let volume24h: Double
+    let change_24h: Double
+    let volume_24h: Double
     
 }
 
-struct MarketsDescription: Codable {
+struct AllMarketsDescription: Codable {
     let markets: [Market]
 }

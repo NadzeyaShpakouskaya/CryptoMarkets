@@ -7,16 +7,20 @@
 
 struct Currency: Codable {
     
-    let assetId: String
+    let asset_id: String
     let name: String
     let price: Double
-    let volume24h: Double
-    let change1h: Double
-    let change24h: Double
-    let change7d: Double
+    let volume_24h: Double
+    let change_1h: Double
+    let change_24h: Double
+    let change_7d: Double
     
 }
 
-struct CurrenciesDescription: Codable {
-    let currencies: [Currency]
+struct AllCurrenciesDescription: Codable {
+    let assets: [Currency]
+}
+
+struct CurrencyDescription: Codable {
+    let asset: Currency
 }
