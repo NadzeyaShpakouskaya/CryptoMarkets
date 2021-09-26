@@ -150,5 +150,5 @@ enum Route: String {
 }
 
 struct Constants {
-    static var basicURL = "https://www.cryptingup.com/api/"
+    static let basicURL = "https://www.cryptingup.com/api/"
 }
