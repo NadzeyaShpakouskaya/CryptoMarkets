@@ -8,17 +8,19 @@
 import UIKit
 
 class CurrencyForMarketTableViewCell: UITableViewCell {
-
+    // MARK: - IBOutlets
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var trendImage: UIImageView!
     
+    // MARK: - Public methods
     func configureCellFor(_ market: Market) {
         currencyLabel.text = market.symbol
         volumeLabel.text = "via \(market.exchange_id)"
         priceLabel.text =  formatPrice(market.price_unconverted)
+        
         switchArrow(trendImage, for: market.change_24h)
     }
 }

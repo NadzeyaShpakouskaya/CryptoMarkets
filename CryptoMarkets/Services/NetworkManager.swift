@@ -8,8 +8,8 @@
 import UIKit
 
 class NetworkManager {
+    //Create Singleton
     static let shared = NetworkManager()
-    
     private init() {}
     
     func fetchAllExchanges(completion: @escaping (Result<[Exchange], Error>) -> ()) {
@@ -19,7 +19,7 @@ class NetworkManager {
         }
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
-                print(error?.localizedDescription ?? "unknown error")                
+                print(error?.localizedDescription ?? "unknown error")
                 return
             }
             do {

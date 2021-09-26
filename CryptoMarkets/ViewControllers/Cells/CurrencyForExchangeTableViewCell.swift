@@ -8,13 +8,14 @@
 import UIKit
 
 class CurrencyForExchangeTableViewCell: UITableViewCell {
+    // MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var assetLabel: UILabel!
     
     @IBOutlet weak var tradeImage: UIImageView!
     
- 
+    // MARK: - Public methods
     func configureCellFor(for market: Market) {
         nameLabel.text = market.base_asset
         assetLabel.text = "to \(market.quote_asset)"

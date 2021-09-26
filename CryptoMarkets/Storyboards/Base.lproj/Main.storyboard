@@ -29,6 +29,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Exchanges" imagePadding="20">
                                             <imageReference key="image" image="arrow.left.arrow.right.circle" catalog="system" symbolScale="large"/>
                                             <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                            <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="PqS-cC-CvE" kind="show" id="VuB-dA-jrS"/>
@@ -40,6 +41,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="coloncurrencysign.circle" catalog="system" title="Currencies" imagePadding="20">
                                             <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                            <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <segue destination="tF1-gv-GXi" kind="show" id="EXw-Wc-bRS"/>
@@ -49,7 +51,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
                         <constraints>
                             <constraint firstItem="uen-gO-Svz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Phu-yc-wwb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uen-gO-Svz" secondAttribute="trailing" constant="30" id="e8B-dq-SdG"/>
@@ -69,24 +71,24 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="2rd-vC-seq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="tnG-dy-fmV">
-                            <rect key="frame" x="0.0" y="153" width="320" height="44"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="tnG-dy-fmV">
+                            <rect key="frame" x="0.0" y="167" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyDefaultCell" rowHeight="86" id="QTk-pd-lY9" customClass="CurrencyTableViewCell" customModule="CryptoMarkets" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="320" height="86"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="currencyDefaultCell" rowHeight="100" id="QTk-pd-lY9" customClass="CurrencyTableViewCell" customModule="CryptoMarkets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QTk-pd-lY9" id="FAQ-hu-91t">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="294.5" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3pM-Wv-MtN">
-                                            <rect key="frame" x="16" y="19" width="288" height="48"/>
+                                            <rect key="frame" x="16" y="19" width="270.5" height="62"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9y1-OP-ndg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="20"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="270.5" height="20"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1Bu-rb-XA1">
                                                             <rect key="frame" x="0.0" y="0.0" width="69.5" height="20"/>
@@ -109,36 +111,36 @@
                                                             </subviews>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BTC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBT-kg-oqM">
-                                                            <rect key="frame" x="252" y="0.0" width="36" height="20"/>
-                                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="229" y="0.0" width="41.5" height="20"/>
+                                                            <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="20"/>
+                                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="B3E-2C-Dnn">
-                                                    <rect key="frame" x="0.0" y="36" width="288" height="12"/>
+                                                    <rect key="frame" x="0.0" y="36" width="270.5" height="26"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnI-8C-Gxs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="12"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnI-8C-Gxs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="48.5" height="26"/>
                                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hqM-zL-rhF">
-                                                            <rect key="frame" x="182.5" y="0.0" width="105.5" height="12"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hqM-zL-rhF">
+                                                            <rect key="frame" x="165" y="0.0" width="105.5" height="26"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Yas-jE-MKS">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="12"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="43" height="26"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 H " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDh-VM-M9h">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="27" height="12"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="27" height="26"/>
                                                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3Lr-nU-QbG">
-                                                                            <rect key="frame" x="27" y="1" width="16" height="10"/>
+                                                                            <rect key="frame" x="27" y="1" width="16" height="24"/>
                                                                             <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="20" id="10X-zB-8CA"/>
@@ -149,16 +151,16 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="lsD-kS-JfP">
-                                                                    <rect key="frame" x="51" y="0.0" width="54.5" height="12"/>
+                                                                    <rect key="frame" x="51" y="0.0" width="54.5" height="26"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 24 H" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-7S-J0P">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="12"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="34.5" height="26"/>
                                                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="14"/>
                                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rsk-bQ-1jr">
-                                                                            <rect key="frame" x="34.5" y="1" width="20" height="10"/>
+                                                                            <rect key="frame" x="34.5" y="1" width="20" height="24"/>
                                                                             <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="20" id="EzT-5b-G6F"/>
@@ -200,7 +202,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Currencies" id="gQz-hs-jAU"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="tnG-dy-fmV" id="uJH-Bg-As4"/>
+                        <outlet property="activityIndicator" destination="tnG-dy-fmV" id="Loa-kr-um1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8gf-3O-hoU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -214,17 +216,21 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1yD-gc-nw8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="BEI-kl-6VA">
+                            <rect key="frame" x="0.0" y="167" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="marketCurrencyCell" rowHeight="84" id="AWR-Ec-ZqD" customClass="CurrencyForMarketTableViewCell" customModule="CryptoMarkets" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="320" height="84"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="marketCurrencyCell" rowHeight="100" id="AWR-Ec-ZqD" customClass="CurrencyForMarketTableViewCell" customModule="CryptoMarkets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AWR-Ec-ZqD" id="KfB-q2-PTU">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1WL-rt-3iP">
-                                            <rect key="frame" x="16" y="19" width="288" height="46"/>
+                                            <rect key="frame" x="16" y="19" width="288" height="62"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="yEd-5j-dGc">
                                                     <rect key="frame" x="0.0" y="0.0" width="288" height="20"/>
@@ -247,16 +253,16 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d4E-dZ-PXS">
-                                                    <rect key="frame" x="0.0" y="28" width="288" height="18"/>
+                                                    <rect key="frame" x="0.0" y="42" width="288" height="20"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchange: Kraken" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="pbC-Uq-8np">
-                                                            <rect key="frame" x="0.0" y="0.0" width="131.5" height="18"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="131.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="243577" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="jqW-ad-AfX">
-                                                            <rect key="frame" x="234.5" y="0.0" width="53.5" height="18"/>
+                                                            <rect key="frame" x="234.5" y="0.0" width="53.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -287,6 +293,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="frq-aV-STQ"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="BEI-kl-6VA" id="Agi-sP-5KS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6J-8o-3ic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -299,8 +308,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="lYS-fr-8wX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" id="jp3-2Z-mvt">
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="jp3-2Z-mvt">
                             <rect key="frame" x="0.0" y="142" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </activityIndicatorView>
@@ -333,7 +342,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Exchanges" id="UzX-Cq-Fzj"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="jp3-2Z-mvt" id="3sY-Vr-ZjN"/>
+                        <outlet property="activityIndicator" destination="jp3-2Z-mvt" id="qHA-3e-MqF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scp-F8-oqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -347,7 +356,11 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="ShO-ll-ic6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="Hwd-fh-i7t">
+                            <rect key="frame" x="0.0" y="182" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="defaultCell" id="oqJ-Y3-MLM">
                                 <rect key="frame" x="0.0" y="49.5" width="320" height="43.5"/>
@@ -357,18 +370,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyCell" rowHeight="97" id="GSv-w4-hgL" customClass="CurrencyForExchangeTableViewCell" customModule="CryptoMarkets" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="93" width="320" height="97"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyCell" rowHeight="71" id="GSv-w4-hgL" customClass="CurrencyForExchangeTableViewCell" customModule="CryptoMarkets" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="93" width="320" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GSv-w4-hgL" id="o1O-t8-cox">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xry-Eg-K7Z">
-                                            <rect key="frame" x="24" y="19" width="272" height="59"/>
+                                            <rect key="frame" x="16" y="11" width="288" height="49"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sud-iK-jZh">
-                                                    <rect key="frame" x="0.0" y="14.5" width="90" height="30"/>
+                                                    <rect key="frame" x="0.0" y="9.5" width="90" height="30"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="c7B-rt-sTF">
                                                             <rect key="frame" x="0.0" y="1" width="30" height="28"/>
@@ -387,7 +400,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yD6-da-7Ky">
-                                                    <rect key="frame" x="205.5" y="11" width="66.5" height="37"/>
+                                                    <rect key="frame" x="221.5" y="6" width="66.5" height="37"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USDT" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="VIM-eF-UkD">
                                                             <rect key="frame" x="28" y="0.0" width="38.5" height="17.5"/>
@@ -407,10 +420,10 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Xry-Eg-K7Z" firstAttribute="top" secondItem="o1O-t8-cox" secondAttribute="topMargin" constant="8" id="P4Y-A4-emk"/>
-                                        <constraint firstItem="Xry-Eg-K7Z" firstAttribute="leading" secondItem="o1O-t8-cox" secondAttribute="leadingMargin" constant="8" id="Wkq-cI-bVW"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Xry-Eg-K7Z" secondAttribute="trailing" constant="8" id="iyz-pp-SMa"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Xry-Eg-K7Z" secondAttribute="bottom" constant="8" id="w8V-vG-YhP"/>
+                                        <constraint firstItem="Xry-Eg-K7Z" firstAttribute="top" secondItem="o1O-t8-cox" secondAttribute="topMargin" id="P4Y-A4-emk"/>
+                                        <constraint firstItem="Xry-Eg-K7Z" firstAttribute="leading" secondItem="o1O-t8-cox" secondAttribute="leadingMargin" id="Wkq-cI-bVW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Xry-Eg-K7Z" secondAttribute="trailing" id="iyz-pp-SMa"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Xry-Eg-K7Z" secondAttribute="bottom" id="w8V-vG-YhP"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -427,6 +440,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="VQ6-l5-A9s"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Hwd-fh-i7t" id="UT1-LA-tOz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fOE-Rk-gW6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -460,6 +476,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

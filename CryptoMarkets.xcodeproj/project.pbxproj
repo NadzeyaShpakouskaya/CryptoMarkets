@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FD10151B26FDB38200DDCFAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10151A26FDB38200DDCFAC /* AppDelegate.swift */; };
 		FD10151D26FDB38200DDCFAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10151C26FDB38200DDCFAC /* SceneDelegate.swift */; };
-		FD10151F26FDB38200DDCFAC /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10151E26FDB38200DDCFAC /* StartViewController.swift */; };
 		FD10152226FDB38200DDCFAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD10152026FDB38200DDCFAC /* Main.storyboard */; };
 		FD10152426FDB38500DDCFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD10152326FDB38500DDCFAC /* Assets.xcassets */; };
 		FD10152726FDB38500DDCFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD10152526FDB38500DDCFAC /* LaunchScreen.storyboard */; };
@@ -24,13 +23,13 @@
 		FD10154826FF464400DDCFAC /* CurrenciesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154726FF464400DDCFAC /* CurrenciesListViewController.swift */; };
 		FD10154A26FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154926FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift */; };
 		FD10154C26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */; };
+		FD10154F270071FC00DDCFAC /* Extension+UiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD10151726FDB38200DDCFAC /* CryptoMarkets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMarkets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD10151A26FDB38200DDCFAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD10151C26FDB38200DDCFAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FD10151E26FDB38200DDCFAC /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		FD10152126FDB38200DDCFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD10152326FDB38500DDCFAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD10152626FDB38500DDCFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,6 +45,7 @@
 		FD10154726FF464400DDCFAC /* CurrenciesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesListViewController.swift; sourceTree = "<group>"; };
 		FD10154926FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsByCurrencyViewController.swift; sourceTree = "<group>"; };
 		FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyForMarketTableViewCell.swift; sourceTree = "<group>"; };
+		FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UiTableViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +80,11 @@
 			children = (
 				FD10152E26FDBD6A00DDCFAC /* App */,
 				FD10152F26FDBD7500DDCFAC /* ViewControllers */,
-				FD10153026FDBD8B00DDCFAC /* Storyboards */,
-				FD10152326FDB38500DDCFAC /* Assets.xcassets */,
 				FD10153A26FED88200DDCFAC /* Services */,
 				FD10153526FDBE0800DDCFAC /* Models */,
+				FD1015502700720D00DDCFAC /* Extensions */,
+				FD10153026FDBD8B00DDCFAC /* Storyboards */,
+				FD10152326FDB38500DDCFAC /* Assets.xcassets */,
 			);
 			path = CryptoMarkets;
 			sourceTree = "<group>";
@@ -101,7 +102,6 @@
 		FD10152F26FDBD7500DDCFAC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD10151E26FDB38200DDCFAC /* StartViewController.swift */,
 				FD10153B26FF093D00DDCFAC /* ExchangesListViewController.swift */,
 				FD10154126FF156500DDCFAC /* DetailedExchangeViewController.swift */,
 				FD10154726FF464400DDCFAC /* CurrenciesListViewController.swift */,
@@ -146,6 +146,14 @@
 				FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		FD1015502700720D00DDCFAC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,12 +231,12 @@
 				FD10153726FDC34D00DDCFAC /* Currency.swift in Sources */,
 				FD10154C26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift in Sources */,
 				FD10153226FDBDF700DDCFAC /* Exchange.swift in Sources */,
-				FD10151F26FDB38200DDCFAC /* StartViewController.swift in Sources */,
 				FD10154A26FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift in Sources */,
 				FD10154626FF441B00DDCFAC /* CurrencyTableViewCell.swift in Sources */,
 				FD10153926FED87C00DDCFAC /* NetworkManager.swift in Sources */,
 				FD10154226FF156500DDCFAC /* DetailedExchangeViewController.swift in Sources */,
 				FD10151B26FDB38200DDCFAC /* AppDelegate.swift in Sources */,
+				FD10154F270071FC00DDCFAC /* Extension+UiTableViewCell.swift in Sources */,
 				FD10151D26FDB38200DDCFAC /* SceneDelegate.swift in Sources */,
 				FD10154826FF464400DDCFAC /* CurrenciesListViewController.swift in Sources */,
 				FD10153426FDBE0200DDCFAC /* Market.swift in Sources */,

@@ -8,20 +8,23 @@
 import UIKit
 
 class DetailedExchangeViewController: UITableViewController {
+    // MARK: - IBOutlets
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    // MARK: - Public properties
     var exchange: Exchange!
     
+    // MARK: - Private properties
     private var markets: [Market] = []
-    private let dataManager = NetworkManager.shared
-
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = exchange.name
-        
         fetchData()
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
@@ -36,6 +39,7 @@ class DetailedExchangeViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)
             
             var content = cell.defaultContentConfiguration()
+            
             switch indexPath.row {
             case 0:
                 let value = String(format: "%.2f", exchange.volume_24h)
@@ -43,14 +47,17 @@ class DetailedExchangeViewController: UITableViewController {
             default:
                 content.text = exchange.website
             }
-            content.textProperties.font = UIFont(name: "Geeza Pro", size: 16) ?? .systemFont(ofSize: 16)
+            
+            content.textProperties.font = UIFont(name: "Geeza Pro", size: 16) ??
+                .systemFont(ofSize: 16)
             cell.contentConfiguration = content
-    
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "currencyCell", for: indexPath) as! CurrencyForExchangeTableViewCell
+            
             let market = markets[indexPath.row]
             cell.configureCellFor(for: market)
+            
             return cell
         }
         
@@ -60,20 +67,19 @@ class DetailedExchangeViewController: UITableViewController {
         return section != 0 ? "Currencies" : nil
     }
     
+    // MARK: - Private methods
     private func fetchData() {
-        dataManager.fetchMarketBy(id: exchange.exchange_id) { result in
+        NetworkManager.shared.fetchMarketBy(id: exchange.exchange_id) { result in
             switch result {
             case .success(let markets):
                 self.markets = markets
                 DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
                     self.tableView.reloadData()
                 }
-                print(markets)
             case .failure(let error):
                 print(error)
             }
         }
     }
-    
-    
 }
