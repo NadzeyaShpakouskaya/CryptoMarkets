@@ -18,8 +18,8 @@ class CurrencyForExchangeTableViewCell: UITableViewCell {
     // MARK: - Public methods
     func configureCellFor(for market: Market) {
         nameLabel.text = market.base_asset
-        assetLabel.text = "to \(market.quote_asset)"
-        priceLabel.text = formatPrice(market.price_unconverted)
+        assetLabel.text = market.quote_asset
+        priceLabel.text = "= \(formatPrice(market.price_unconverted))"
         
         switchArrow(tradeImage, for: market.change_24h)
 

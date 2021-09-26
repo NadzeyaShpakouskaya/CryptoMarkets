@@ -30,6 +30,7 @@ class ExchangesListViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = exchanges[indexPath.row].name
         content.textProperties.font = UIFont(name: "Geeza Pro Bold", size: 18) ?? .systemFont(ofSize: 18)
+        content.textProperties.color = .darkGray
         cell.contentConfiguration = content
         return cell
     }

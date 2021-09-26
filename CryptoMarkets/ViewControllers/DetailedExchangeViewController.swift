@@ -21,6 +21,7 @@ class DetailedExchangeViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = exchange.name
+        tableView.sectionHeaderHeight = 35
         fetchData()
     }
     
@@ -42,13 +43,17 @@ class DetailedExchangeViewController: UITableViewController {
             
             switch indexPath.row {
             case 0:
-                let value = String(format: "%.2f", exchange.volume_24h)
-                content.text = "Volume: \(value)"
+                content.text = "Trade Volume:"
+                content.secondaryText = exchange.volume_24h.formatted(.number)
             default:
-                content.text = exchange.website
+                content.text = "Website:"
+                content.secondaryText = exchange.website
             }
             
-            content.textProperties.font = UIFont(name: "Geeza Pro", size: 16) ??
+            content.textProperties.font = UIFont(name: "Geeza Pro", size: 14) ??
+                .systemFont(ofSize: 14)
+            content.textProperties.color = .darkGray
+            content.secondaryTextProperties.font = UIFont(name: "Geeza Pro Bold", size: 16) ??
                 .systemFont(ofSize: 16)
             cell.contentConfiguration = content
             return cell
@@ -64,7 +69,20 @@ class DetailedExchangeViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return section != 0 ? "Currencies" : nil
+        
+        return section != 0 ? "Currencies" : "Information"
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UILabel()
+        
+        let attributes = [NSAttributedString.Key.foregroundColor: UIColor.darkGray,
+                          NSAttributedString.Key.font: UIFont(name: "Geeza Pro Bold", size: 18.0)!]
+        let infoHeader = NSAttributedString(string:  "Information", attributes: attributes)
+        let currenciesHeader = NSAttributedString(string: "Currencies", attributes: attributes)
+
+        view.attributedText = section == 0 ? infoHeader : currenciesHeader
+        return view
     }
     
     // MARK: - Private methods
