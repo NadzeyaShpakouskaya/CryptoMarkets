@@ -21,7 +21,7 @@ class MarketsByCurrencyViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = currency.name
-        fetchMarketsForCurrency()
+        fetchMarketsForCurrency(id: currency.assetId ?? "")
     }
     
     // MARK: - Table view data source
@@ -39,8 +39,9 @@ class MarketsByCurrencyViewController: UITableViewController {
     }
     
     // MARK: - Private methods
-    private func fetchMarketsForCurrency() {
-        NetworkManager.shared.fetchMarketsForCurrencyBy(id: currency.assetId) { result in
+    private func fetchMarketsForCurrency(id: String) {
+        let url = Constants.basicURL + Route.currenciesAll.rawValue + "/" + id + "/markets"
+        AlamofireNetworkManager.shared.fetchMarkets(url: url) { result in
             switch result {
             case .success(let markets):
                 self.markets = markets

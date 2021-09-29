@@ -42,7 +42,8 @@ class CurrenciesListViewController: UITableViewController {
     
     // MARK: - Private methods
     private func fetchAllCurrencies() {
-        NetworkManager.shared.fetchAllCurrencies() { result in
+        let url = Constants.basicURL + Route.currenciesAll.rawValue
+        AlamofireNetworkManager.shared.fetchCurrencies(url: url) { result in
             switch result {
             case .success(let currencies):
                 self.currencies = currencies

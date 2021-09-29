@@ -45,9 +45,12 @@ class ExchangesListViewController: UITableViewController {
     
     // MARK: - Private methods
     private func fetchAllExchanges() {
-        NetworkManager.shared.fetchAllExchanges { result in
+        let url = Constants.basicURL + Route.exchangesAll.rawValue
+        
+        AlamofireNetworkManager.shared.fetchExchanges(url: url) { result in
             switch result {
             case .success(let exchanges):
+                print(exchanges)
                 self.exchanges = exchanges
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()

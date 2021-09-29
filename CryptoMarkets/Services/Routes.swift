@@ -13,8 +13,6 @@ enum Route: String {
     case marketsAll = "markets"
     case currenciesAll = "assets"
 }
-
-
 struct Constants {
     static let basicURL = "https://www.cryptingup.com/api/"
 }

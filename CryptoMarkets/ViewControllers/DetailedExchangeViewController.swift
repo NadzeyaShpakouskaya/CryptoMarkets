@@ -22,7 +22,7 @@ class DetailedExchangeViewController: UITableViewController {
         super.viewDidLoad()
         title = exchange.name
         tableView.sectionHeaderHeight = 35
-        fetchData()
+        fetchData(by: exchange.exchangeId ?? "")
     }
     
     // MARK: - Table view data source
@@ -44,7 +44,7 @@ class DetailedExchangeViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 content.text = "Trade Volume:"
-                content.secondaryText = exchange.volumeLastDay.formatted(.number)
+                content.secondaryText = exchange.volumeLastDay?.formatted(.number) ?? "n/a"
             default:
                 content.text = "Website:"
                 content.secondaryText = exchange.website
@@ -86,8 +86,9 @@ class DetailedExchangeViewController: UITableViewController {
     }
     
     // MARK: - Private methods
-    private func fetchData() {
-        NetworkManager.shared.fetchMarketBy(id: exchange.exchangeId) { result in
+    private func fetchData(by id: String) {
+        let url = Constants.basicURL + Route.exchangesAll.rawValue + "/" + id + "/markets"
+        AlamofireNetworkManager.shared.fetchMarkets(url: url ) { result in
             switch result {
             case .success(let markets):
                 self.markets = markets

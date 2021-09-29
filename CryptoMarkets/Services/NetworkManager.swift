@@ -39,8 +39,7 @@ class NetworkManager {
         }.resume()
     }
     
-    func fetchAllExchanges(completion: @escaping (Result<[Exchange], Error>) -> Void) {
-        let url = Constants.basicURL + Route.exchangesAll.rawValue
+    func fetchExchanges(url: String, completion: @escaping (Result<[Exchange], Error>) -> Void) {
         fetchData(dataType: AllExchangesDescription.self, from: url, convertFromSnakeCase: false) { result in
             switch result {
             case .success(let description):
@@ -53,22 +52,7 @@ class NetworkManager {
         }
     }
     
-    
-    func fetchExchange(by id: String, completion: @escaping (Result<Exchange, Error>) -> Void) {
-        let url = Constants.basicURL + Route.exchangesAll.rawValue + "/" + id
-        fetchData(dataType: ExchangeDescription.self, from: url, convertFromSnakeCase: false) { result in
-            switch result {
-            case .success(let description):
-                DispatchQueue.main.async {
-                    completion(.success(description.exchange))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    func fetchAllMarkets(completion: @escaping (Result<[Market], Error>) -> Void) {
+    func fetchMarkets(url: String, completion: @escaping (Result<[Market], Error>) -> Void) {
         let url = Constants.basicURL + Route.marketsAll.rawValue
         fetchData(dataType: AllMarketsDescription.self, from: url, convertFromSnakeCase: false) { result in
             switch result {
@@ -81,45 +65,15 @@ class NetworkManager {
             }
         }
     }
+
     
-    func fetchMarketBy(id: String, completion: @escaping (Result<[Market], Error>) -> Void) {
-        let url = Constants.basicURL + Route.exchangesAll.rawValue + "/" + id + "/markets"
-        fetchData(dataType: AllMarketsDescription.self, from: url, convertFromSnakeCase: false) { result in
-            switch result {
-            case .success(let description):
-                DispatchQueue.main.async {
-                    completion(.success(description.markets))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    
-    func fetchAllCurrencies(completion: @escaping (Result<[Currency], Error>) -> ()) {
-        let url = Constants.basicURL + Route.currenciesAll.rawValue
+    func fetchCurrencies(url: String, completion: @escaping (Result<[Currency], Error>) -> ()) {
         
         fetchData(dataType: AllCurrenciesDescription.self, from: url, convertFromSnakeCase: false) { result in
             switch result {
             case .success(let description):
                 DispatchQueue.main.async {
                     completion(.success(description.assets))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    func fetchMarketsForCurrencyBy(id: String, completion: @escaping (Result<[Market], Error>) -> ()) {
-        let url = Constants.basicURL + Route.currenciesAll.rawValue + "/" + id + "/markets"
-        
-        fetchData(dataType: AllMarketsDescription.self, from: url, convertFromSnakeCase: false) { result in
-            switch result {
-            case .success(let description):
-                DispatchQueue.main.async {
-                    completion(.success(description.markets))
                 }
             case .failure(let error):
                 completion(.failure(error))

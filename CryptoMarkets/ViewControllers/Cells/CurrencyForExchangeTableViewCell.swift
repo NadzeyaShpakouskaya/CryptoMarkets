@@ -19,9 +19,9 @@ class CurrencyForExchangeTableViewCell: UITableViewCell {
     func configureCellFor(for market: Market) {
         nameLabel.text = market.baseAsset
         assetLabel.text = market.quoteAsset
-        priceLabel.text = "= \(formatPrice(market.price))"
+        priceLabel.text = "= \(formatPrice(market.price ?? 0))"
         
-        switchArrow(tradeImage, for: market.changeLastDay)
+        switchArrow(tradeImage, for: market.changeLastDay ?? 0)
 
     }
 }
