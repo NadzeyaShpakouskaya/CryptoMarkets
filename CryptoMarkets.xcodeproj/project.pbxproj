@@ -25,6 +25,7 @@
 		FD10154A26FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154926FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift */; };
 		FD10154C26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */; };
 		FD10154F270071FC00DDCFAC /* Extension+UiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */; };
+		FD37B3AA270446C5008D3215 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37B3A9270446C5008D3215 /* Routes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		FD10154926FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsByCurrencyViewController.swift; sourceTree = "<group>"; };
 		FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyForMarketTableViewCell.swift; sourceTree = "<group>"; };
 		FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UiTableViewCell.swift"; sourceTree = "<group>"; };
+		FD37B3A9270446C5008D3215 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,6 @@
 				E2160BC091A7D3E401FA07CA /* Pods-CryptoMarkets.debug.xcconfig */,
 				75D259574495E8256EC65627 /* Pods-CryptoMarkets.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -159,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				FD10153826FED87C00DDCFAC /* NetworkManager.swift */,
+				FD37B3A9270446C5008D3215 /* Routes.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -303,6 +305,7 @@
 				FD10154A26FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift in Sources */,
 				FD10154626FF441B00DDCFAC /* CurrencyTableViewCell.swift in Sources */,
 				FD10153926FED87C00DDCFAC /* NetworkManager.swift in Sources */,
+				FD37B3AA270446C5008D3215 /* Routes.swift in Sources */,
 				FD10154226FF156500DDCFAC /* DetailedExchangeViewController.swift in Sources */,
 				FD10151B26FDB38200DDCFAC /* AppDelegate.swift in Sources */,
 				FD10154F270071FC00DDCFAC /* Extension+UiTableViewCell.swift in Sources */,
