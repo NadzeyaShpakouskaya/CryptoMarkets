@@ -18,9 +18,9 @@ class CurrencyForMarketTableViewCell: UITableViewCell {
     // MARK: - Public methods
     func configureCellFor(_ market: Market) {
         currencyLabel.text = market.symbol
-        volumeLabel.text = "via \(market.exchange_id)"
-        priceLabel.text =  formatPrice(market.price_unconverted)
+        volumeLabel.text = "via \(market.exchangeId ?? "n/a")"
+        priceLabel.text =  formatPrice(market.price ?? 0)
         
-        switchArrow(trendImage, for: market.change_24h)
+        switchArrow(trendImage, for: market.changeLastDay ?? 0)
     }
 }

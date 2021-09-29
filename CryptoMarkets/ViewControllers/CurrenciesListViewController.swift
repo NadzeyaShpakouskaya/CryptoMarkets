@@ -10,7 +10,7 @@ import UIKit
 class CurrenciesListViewController: UITableViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    
     // MARK: - Private properties
     private var currencies: [Currency] = []
     
@@ -42,16 +42,16 @@ class CurrenciesListViewController: UITableViewController {
     
     // MARK: - Private methods
     private func fetchAllCurrencies() {
-        NetworkManager.shared.fetchAllCurrencies() { result in
+        let url = Constants.basicURL + Route.currenciesAll.rawValue
+        AlamofireNetworkManager.shared.fetchCurrencies(url: url) { result in
             switch result {
             case .success(let currencies):
                 self.currencies = currencies
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
+                self.showAlert(with: "Ooops, something went wrong!", and: error.localizedDescription)
             }
         }
     }

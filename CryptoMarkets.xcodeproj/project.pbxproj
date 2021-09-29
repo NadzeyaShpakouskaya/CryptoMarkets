@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01F3DD5A4874BBD26908AB8B /* Pods_CryptoMarkets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4E9B0131BDDE5294608FA92 /* Pods_CryptoMarkets.framework */; };
 		FD10151B26FDB38200DDCFAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10151A26FDB38200DDCFAC /* AppDelegate.swift */; };
 		FD10151D26FDB38200DDCFAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10151C26FDB38200DDCFAC /* SceneDelegate.swift */; };
 		FD10152226FDB38200DDCFAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD10152026FDB38200DDCFAC /* Main.storyboard */; };
@@ -24,9 +25,16 @@
 		FD10154A26FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154926FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift */; };
 		FD10154C26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */; };
 		FD10154F270071FC00DDCFAC /* Extension+UiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */; };
+		FD37B3AA270446C5008D3215 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37B3A9270446C5008D3215 /* Routes.swift */; };
+		FD37B3AC2704593E008D3215 /* AlamofireNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37B3AB2704593E008D3215 /* AlamofireNetworkManager.swift */; };
+		FD37B3AE2704C638008D3215 /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37B3AD2704C638008D3215 /* NetworkManagerProtocol.swift */; };
+		FD37B3B02704CACB008D3215 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37B3AF2704CACB008D3215 /* Extension+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75D259574495E8256EC65627 /* Pods-CryptoMarkets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarkets.release.xcconfig"; path = "Target Support Files/Pods-CryptoMarkets/Pods-CryptoMarkets.release.xcconfig"; sourceTree = "<group>"; };
+		C4E9B0131BDDE5294608FA92 /* Pods_CryptoMarkets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMarkets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2160BC091A7D3E401FA07CA /* Pods-CryptoMarkets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarkets.debug.xcconfig"; path = "Target Support Files/Pods-CryptoMarkets/Pods-CryptoMarkets.debug.xcconfig"; sourceTree = "<group>"; };
 		FD10151726FDB38200DDCFAC /* CryptoMarkets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMarkets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD10151A26FDB38200DDCFAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD10151C26FDB38200DDCFAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +54,10 @@
 		FD10154926FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketsByCurrencyViewController.swift; sourceTree = "<group>"; };
 		FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyForMarketTableViewCell.swift; sourceTree = "<group>"; };
 		FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UiTableViewCell.swift"; sourceTree = "<group>"; };
+		FD37B3A9270446C5008D3215 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		FD37B3AB2704593E008D3215 /* AlamofireNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkManager.swift; sourceTree = "<group>"; };
+		FD37B3AD2704C638008D3215 /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		FD37B3AF2704CACB008D3215 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +65,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F3DD5A4874BBD26908AB8B /* Pods_CryptoMarkets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09D764C0D637297F0935994A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4E9B0131BDDE5294608FA92 /* Pods_CryptoMarkets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCDC08E174183B68305381A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2160BC091A7D3E401FA07CA /* Pods-CryptoMarkets.debug.xcconfig */,
+				75D259574495E8256EC65627 /* Pods-CryptoMarkets.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FD10150E26FDB38200DDCFAC = {
 			isa = PBXGroup;
 			children = (
 				FD10151926FDB38200DDCFAC /* CryptoMarkets */,
 				FD10151826FDB38200DDCFAC /* Products */,
+				CCDC08E174183B68305381A2 /* Pods */,
+				09D764C0D637297F0935994A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,7 +165,10 @@
 		FD10153A26FED88200DDCFAC /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FD37B3AD2704C638008D3215 /* NetworkManagerProtocol.swift */,
+				FD37B3AB2704593E008D3215 /* AlamofireNetworkManager.swift */,
 				FD10153826FED87C00DDCFAC /* NetworkManager.swift */,
+				FD37B3A9270446C5008D3215 /* Routes.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -152,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */,
+				FD37B3AF2704CACB008D3215 /* Extension+UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -163,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD10152B26FDB38500DDCFAC /* Build configuration list for PBXNativeTarget "CryptoMarkets" */;
 			buildPhases = (
+				BCB2EFA4C5CBEF7C4DCDA431 /* [CP] Check Pods Manifest.lock */,
 				FD10151326FDB38200DDCFAC /* Sources */,
 				FD10151426FDB38200DDCFAC /* Frameworks */,
 				FD10151526FDB38200DDCFAC /* Resources */,
+				11D9D33F2B23158FD4C79FA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +260,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11D9D33F2B23158FD4C79FA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoMarkets/Pods-CryptoMarkets-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CryptoMarkets/Pods-CryptoMarkets-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CryptoMarkets/Pods-CryptoMarkets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCB2EFA4C5CBEF7C4DCDA431 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoMarkets-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FD10151326FDB38200DDCFAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -234,11 +314,15 @@
 				FD10154A26FF5CC200DDCFAC /* MarketsByCurrencyViewController.swift in Sources */,
 				FD10154626FF441B00DDCFAC /* CurrencyTableViewCell.swift in Sources */,
 				FD10153926FED87C00DDCFAC /* NetworkManager.swift in Sources */,
+				FD37B3AA270446C5008D3215 /* Routes.swift in Sources */,
 				FD10154226FF156500DDCFAC /* DetailedExchangeViewController.swift in Sources */,
 				FD10151B26FDB38200DDCFAC /* AppDelegate.swift in Sources */,
 				FD10154F270071FC00DDCFAC /* Extension+UiTableViewCell.swift in Sources */,
 				FD10151D26FDB38200DDCFAC /* SceneDelegate.swift in Sources */,
+				FD37B3AE2704C638008D3215 /* NetworkManagerProtocol.swift in Sources */,
 				FD10154826FF464400DDCFAC /* CurrenciesListViewController.swift in Sources */,
+				FD37B3B02704CACB008D3215 /* Extension+UIViewController.swift in Sources */,
+				FD37B3AC2704593E008D3215 /* AlamofireNetworkManager.swift in Sources */,
 				FD10153426FDBE0200DDCFAC /* Market.swift in Sources */,
 				FD10153C26FF093D00DDCFAC /* ExchangesListViewController.swift in Sources */,
 			);
@@ -384,6 +468,7 @@
 		};
 		FD10152C26FDB38500DDCFAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2160BC091A7D3E401FA07CA /* Pods-CryptoMarkets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -412,6 +497,7 @@
 		};
 		FD10152D26FDB38500DDCFAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75D259574495E8256EC65627 /* Pods-CryptoMarkets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

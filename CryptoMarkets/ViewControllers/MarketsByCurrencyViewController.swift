@@ -21,17 +21,17 @@ class MarketsByCurrencyViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = currency.name
-        fetchMarketsForCurrency()
+        fetchMarketsForCurrency(id: currency.assetId ?? "")
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return markets.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "marketCurrencyCell", for: indexPath) as! CurrencyForMarketTableViewCell
-
+        
         let market = markets[indexPath.row]
         cell.configureCellFor(market)
         
@@ -39,19 +39,19 @@ class MarketsByCurrencyViewController: UITableViewController {
     }
     
     // MARK: - Private methods
-    private func fetchMarketsForCurrency() {
-        NetworkManager.shared.fetchMarketsForCurrencyBy(id: currency.asset_id) { result in
+    private func fetchMarketsForCurrency(id: String) {
+        let url = Constants.basicURL + Route.currenciesAll.rawValue + "/" + id + "/markets"
+        AlamofireNetworkManager.shared.fetchMarkets(url: url) { result in
             switch result {
             case .success(let markets):
                 self.markets = markets
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showAlert(with: "Ooops, something went wrong!", and: error.localizedDescription)
             }
         }
     }
-
+    
 }

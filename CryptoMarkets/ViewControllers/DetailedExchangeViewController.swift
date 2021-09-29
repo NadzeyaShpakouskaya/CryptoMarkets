@@ -22,7 +22,7 @@ class DetailedExchangeViewController: UITableViewController {
         super.viewDidLoad()
         title = exchange.name
         tableView.sectionHeaderHeight = 35
-        fetchData()
+        fetchData(by: exchange.exchangeId ?? "")
     }
     
     // MARK: - Table view data source
@@ -44,7 +44,7 @@ class DetailedExchangeViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 content.text = "Trade Volume:"
-                content.secondaryText = exchange.volume_24h.formatted(.number)
+                content.secondaryText = exchange.volumeLastDay?.formatted(.number) ?? "n/a"
             default:
                 content.text = "Website:"
                 content.secondaryText = exchange.website
@@ -80,23 +80,23 @@ class DetailedExchangeViewController: UITableViewController {
                           NSAttributedString.Key.font: UIFont(name: "Geeza Pro Bold", size: 18.0)!]
         let infoHeader = NSAttributedString(string:  "Information", attributes: attributes)
         let currenciesHeader = NSAttributedString(string: "Currencies", attributes: attributes)
-
+        
         view.attributedText = section == 0 ? infoHeader : currenciesHeader
         return view
     }
     
     // MARK: - Private methods
-    private func fetchData() {
-        NetworkManager.shared.fetchMarketBy(id: exchange.exchange_id) { result in
+    private func fetchData(by id: String) {
+        let url = Constants.basicURL + Route.exchangesAll.rawValue + "/" + id + "/markets"
+        AlamofireNetworkManager.shared.fetchMarkets(url: url ) { result in
             switch result {
             case .success(let markets):
                 self.markets = markets
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
+                self.showAlert(with: "Ooops, something went wrong!", and: error.localizedDescription)
             }
         }
     }
