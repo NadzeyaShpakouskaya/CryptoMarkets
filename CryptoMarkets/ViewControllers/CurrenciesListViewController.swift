@@ -10,7 +10,7 @@ import UIKit
 class CurrenciesListViewController: UITableViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    
     // MARK: - Private properties
     private var currencies: [Currency] = []
     
@@ -46,10 +46,8 @@ class CurrenciesListViewController: UITableViewController {
             switch result {
             case .success(let currencies):
                 self.currencies = currencies
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }

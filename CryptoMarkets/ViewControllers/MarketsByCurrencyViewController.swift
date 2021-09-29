@@ -23,15 +23,15 @@ class MarketsByCurrencyViewController: UITableViewController {
         title = currency.name
         fetchMarketsForCurrency()
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return markets.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "marketCurrencyCell", for: indexPath) as! CurrencyForMarketTableViewCell
-
+        
         let market = markets[indexPath.row]
         cell.configureCellFor(market)
         
@@ -44,14 +44,12 @@ class MarketsByCurrencyViewController: UITableViewController {
             switch result {
             case .success(let markets):
                 self.markets = markets
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-
+    
 }

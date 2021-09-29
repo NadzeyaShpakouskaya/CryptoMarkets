@@ -80,7 +80,7 @@ class DetailedExchangeViewController: UITableViewController {
                           NSAttributedString.Key.font: UIFont(name: "Geeza Pro Bold", size: 18.0)!]
         let infoHeader = NSAttributedString(string:  "Information", attributes: attributes)
         let currenciesHeader = NSAttributedString(string: "Currencies", attributes: attributes)
-
+        
         view.attributedText = section == 0 ? infoHeader : currenciesHeader
         return view
     }
@@ -91,10 +91,8 @@ class DetailedExchangeViewController: UITableViewController {
             switch result {
             case .success(let markets):
                 self.markets = markets
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }

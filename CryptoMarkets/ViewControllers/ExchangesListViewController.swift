@@ -17,7 +17,7 @@ class ExchangesListViewController: UITableViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchAllChanges()
+        fetchAllExchanges()
     }
     
     // MARK: - Table view data source
@@ -44,15 +44,13 @@ class ExchangesListViewController: UITableViewController {
     }
     
     // MARK: - Private methods
-    private func fetchAllChanges() {
+    private func fetchAllExchanges() {
         NetworkManager.shared.fetchAllExchanges { result in
             switch result {
             case .success(let exchanges):
                 self.exchanges = exchanges
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.tableView.reloadData()
-                }
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }
