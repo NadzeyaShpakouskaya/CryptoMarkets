@@ -44,7 +44,7 @@ class DetailedExchangeViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 content.text = "Trade Volume:"
-                content.secondaryText = exchange.volume_24h.formatted(.number)
+                content.secondaryText = exchange.volumeLastDay.formatted(.number)
             default:
                 content.text = "Website:"
                 content.secondaryText = exchange.website
@@ -87,7 +87,7 @@ class DetailedExchangeViewController: UITableViewController {
     
     // MARK: - Private methods
     private func fetchData() {
-        NetworkManager.shared.fetchMarketBy(id: exchange.exchange_id) { result in
+        NetworkManager.shared.fetchMarketBy(id: exchange.exchangeId) { result in
             switch result {
             case .success(let markets):
                 self.markets = markets

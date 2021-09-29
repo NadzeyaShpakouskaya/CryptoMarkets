@@ -6,12 +6,17 @@
 //
 
 struct Exchange: Codable {
-    
-    let exchange_id: String
+    let exchangeId: String
     let name: String
     let website: String
-    let volume_24h: Double
+    let volumeLastDay: Double
     
+    enum CodingKeys: String, CodingKey {
+        case exchangeId = "exchange_id"
+        case name = "name"
+        case website = "website"
+        case volumeLastDay = "volume_24h"
+    }
 }
 
 struct ExchangeDescription: Codable {

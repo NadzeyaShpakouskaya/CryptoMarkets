@@ -7,13 +7,23 @@
 
 struct Market: Codable {
     
-    let exchange_id: String
+    let exchangeId: String
     let symbol: String
-    let base_asset: String
-    let quote_asset: String
-    let price_unconverted: Double
-    let change_24h: Double
-    let volume_24h: Double
+    let baseAsset: String
+    let quoteAsset: String
+    let price: Double
+    let changeLastDay: Double
+    let volumeLastDay: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case exchangeId =  "exchange_id"
+        case symbol = "symbol"
+        case baseAsset =  "base_asset"
+        case quoteAsset = "quote_asset"
+        case price = "price_unconverted"
+        case changeLastDay = "change_24h"
+        case volumeLastDay = "volume_24h"
+    }
     
 }
 

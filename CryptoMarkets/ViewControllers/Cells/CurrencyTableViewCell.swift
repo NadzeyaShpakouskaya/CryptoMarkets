@@ -20,12 +20,12 @@ class CurrencyTableViewCell: UITableViewCell {
     
     // MARK: - Public methods
     func configureCellFor(_ currency: Currency) {
-        shortNameLabel.text = currency.asset_id
-        nameLabel.text = currency.name == "" ? currency.asset_id : currency.name
+        shortNameLabel.text = currency.assetId
+        nameLabel.text = currency.name == "" ? currency.assetId : currency.name
         priceLabel.text = formatPrice(currency.price)
         
-        switchArrow(last1HourImage, for: currency.change_1h)
-        switchArrow(last24HoursImage, for: currency.change_24h)
+        switchArrow(last1HourImage, for: currency.changeLastHour)
+        switchArrow(last24HoursImage, for: currency.changeLastDay)
 
     }
     

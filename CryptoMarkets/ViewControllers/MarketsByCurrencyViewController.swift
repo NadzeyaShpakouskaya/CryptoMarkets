@@ -40,7 +40,7 @@ class MarketsByCurrencyViewController: UITableViewController {
     
     // MARK: - Private methods
     private func fetchMarketsForCurrency() {
-        NetworkManager.shared.fetchMarketsForCurrencyBy(id: currency.asset_id) { result in
+        NetworkManager.shared.fetchMarketsForCurrencyBy(id: currency.assetId) { result in
             switch result {
             case .success(let markets):
                 self.markets = markets

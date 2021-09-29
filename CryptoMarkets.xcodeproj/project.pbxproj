@@ -26,6 +26,7 @@
 		FD10154C26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */; };
 		FD10154F270071FC00DDCFAC /* Extension+UiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */; };
 		FD37B3AA270446C5008D3215 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37B3A9270446C5008D3215 /* Routes.swift */; };
+		FD37B3AC2704593E008D3215 /* AlamofireNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD37B3AB2704593E008D3215 /* AlamofireNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FD10154B26FF5CEB00DDCFAC /* CurrencyForMarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyForMarketTableViewCell.swift; sourceTree = "<group>"; };
 		FD10154E270071FC00DDCFAC /* Extension+UiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UiTableViewCell.swift"; sourceTree = "<group>"; };
 		FD37B3A9270446C5008D3215 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		FD37B3AB2704593E008D3215 /* AlamofireNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				FD10153826FED87C00DDCFAC /* NetworkManager.swift */,
+				FD37B3AB2704593E008D3215 /* AlamofireNetworkManager.swift */,
 				FD37B3A9270446C5008D3215 /* Routes.swift */,
 			);
 			path = Services;
@@ -311,6 +314,7 @@
 				FD10154F270071FC00DDCFAC /* Extension+UiTableViewCell.swift in Sources */,
 				FD10151D26FDB38200DDCFAC /* SceneDelegate.swift in Sources */,
 				FD10154826FF464400DDCFAC /* CurrenciesListViewController.swift in Sources */,
+				FD37B3AC2704593E008D3215 /* AlamofireNetworkManager.swift in Sources */,
 				FD10153426FDBE0200DDCFAC /* Market.swift in Sources */,
 				FD10153C26FF093D00DDCFAC /* ExchangesListViewController.swift in Sources */,
 			);
