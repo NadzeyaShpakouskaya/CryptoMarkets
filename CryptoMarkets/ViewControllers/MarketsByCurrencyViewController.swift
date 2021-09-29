@@ -49,6 +49,7 @@ class MarketsByCurrencyViewController: UITableViewController {
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
+                self.showAlert(with: "Ooops, something went wrong!", and: error.localizedDescription)
             }
         }
     }

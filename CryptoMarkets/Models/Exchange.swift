@@ -32,15 +32,6 @@ struct Exchange: Codable {
         case volumeLastDay = "volume_24h"
     }
 }
-//
-//struct ExchangeDescription: Codable {
-//    let exchange: Exchange
-//    
-//    static func transformToExchange(data: Any) -> Exchange? {
-//        guard let data = data as? [String:Any] else { return nil }
-//        return Exchange(data: data)
-//    }
-//}
 
 struct AllExchangesDescription: Codable {
     let exchanges: [Exchange]

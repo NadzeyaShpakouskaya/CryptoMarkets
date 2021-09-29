@@ -7,10 +7,72 @@
 
 import UIKit
 
-class NetworkManager {
+class NetworkManager: NetworkManagerProtocol {
+    
     //Create Singleton
     static let shared = NetworkManager()
     private init() {}
+    
+    //MARK: - Public methods
+    func fetchExchanges(url: String, completion: @escaping (Result<[Exchange], Error>) -> Void) {
+        fetchData(
+            dataType: AllExchangesDescription.self,
+            from: url,
+            convertFromSnakeCase: false
+        ) { result in
+            switch result {
+            case .success(let description):
+                DispatchQueue.main.async {
+                    completion(.success(description.exchanges))
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    func fetchMarkets(url: String, completion: @escaping (Result<[Market], Error>) -> Void) {
+        let url = Constants.basicURL + Route.marketsAll.rawValue
+        fetchData(
+            dataType: AllMarketsDescription.self,
+            from: url,
+            convertFromSnakeCase: false
+        ) { result in
+            switch result {
+            case .success(let description):
+                DispatchQueue.main.async {
+                    completion(.success(description.markets))
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
+    
+    func fetchCurrencies(url: String, completion: @escaping (Result<[Currency], Error>) -> Void) {
+        fetchData(
+            dataType: AllCurrenciesDescription.self,
+            from: url,
+            convertFromSnakeCase: false
+        ) { result in
+            switch result {
+            case .success(let description):
+                DispatchQueue.main.async {
+                    completion(.success(description.assets))
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    //MARK: - Privates methods
     
     // Generic method to fetch Any data
     private func fetchData<T:Codable>(dataType: T.Type, from url: String, convertFromSnakeCase: Bool = true, completion: @escaping (Result<T, NetworkError>) -> Void ) {
@@ -39,47 +101,6 @@ class NetworkManager {
         }.resume()
     }
     
-    func fetchExchanges(url: String, completion: @escaping (Result<[Exchange], Error>) -> Void) {
-        fetchData(dataType: AllExchangesDescription.self, from: url, convertFromSnakeCase: false) { result in
-            switch result {
-            case .success(let description):
-                DispatchQueue.main.async {
-                    completion(.success(description.exchanges))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    func fetchMarkets(url: String, completion: @escaping (Result<[Market], Error>) -> Void) {
-        let url = Constants.basicURL + Route.marketsAll.rawValue
-        fetchData(dataType: AllMarketsDescription.self, from: url, convertFromSnakeCase: false) { result in
-            switch result {
-            case .success(let description):
-                DispatchQueue.main.async {
-                    completion(.success(description.markets))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
-
-    
-    func fetchCurrencies(url: String, completion: @escaping (Result<[Currency], Error>) -> ()) {
-        
-        fetchData(dataType: AllCurrenciesDescription.self, from: url, convertFromSnakeCase: false) { result in
-            switch result {
-            case .success(let description):
-                DispatchQueue.main.async {
-                    completion(.success(description.assets))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
 }
 enum NetworkError: Error {
     case invalidUrl

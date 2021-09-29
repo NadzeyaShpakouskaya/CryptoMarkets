@@ -50,11 +50,11 @@ class ExchangesListViewController: UITableViewController {
         AlamofireNetworkManager.shared.fetchExchanges(url: url) { result in
             switch result {
             case .success(let exchanges):
-                print(exchanges)
                 self.exchanges = exchanges
                 self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             case .failure(let error):
+                self.showAlert(with: "Ooops, something went wrong!", and: error.localizedDescription)
                 print(error)
             }
         }

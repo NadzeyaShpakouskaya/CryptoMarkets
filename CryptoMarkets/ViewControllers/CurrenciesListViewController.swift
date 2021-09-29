@@ -51,6 +51,7 @@ class CurrenciesListViewController: UITableViewController {
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error)
+                self.showAlert(with: "Ooops, something went wrong!", and: error.localizedDescription)
             }
         }
     }
