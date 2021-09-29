@@ -17,11 +17,11 @@ class CurrencyForExchangeTableViewCell: UITableViewCell {
     
     // MARK: - Public methods
     func configureCellFor(for market: Market) {
-        nameLabel.text = market.base_asset
-        assetLabel.text = market.quote_asset
-        priceLabel.text = "= \(formatPrice(market.price_unconverted))"
+        nameLabel.text = market.baseAsset
+        assetLabel.text = market.quoteAsset
+        priceLabel.text = "= \(formatPrice(market.price ?? 0))"
         
-        switchArrow(tradeImage, for: market.change_24h)
+        switchArrow(tradeImage, for: market.changeLastDay ?? 0)
 
     }
 }
