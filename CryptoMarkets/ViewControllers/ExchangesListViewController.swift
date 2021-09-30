@@ -20,10 +20,16 @@ class ExchangesListViewController: UITableViewController {
         fetchAllExchanges()
     }
     
+    override func viewWillLayoutSubviews() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = true
+        activityIndicator.frame = tableView.bounds
+    }
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         exchanges.count
     }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exchangeCell", for: indexPath)

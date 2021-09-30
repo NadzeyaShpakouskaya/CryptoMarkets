@@ -34,7 +34,6 @@ class DetailedExchangeViewController: UITableViewController {
         section == 0 ? 2 : markets.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell", for: indexPath)

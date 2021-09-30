@@ -21,7 +21,7 @@ class AlamofireNetworkManager: NetworkManagerProtocol {
             .responseJSON { response in
                 switch response.result {
                 case .success(let data):
-                    let exchanges = AllExchangesDescription.transformToExchangesFrom(data: data)
+                    let exchanges = Exchange.transformToExchanges(data: data)
                     completion(.success(exchanges))
                 case .failure(let error):
                     completion(.failure(error))
