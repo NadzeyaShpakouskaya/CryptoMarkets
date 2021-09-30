@@ -20,8 +20,9 @@ struct Exchange: Codable {
     }
     
     static func transformToExchanges(data: Any) -> [Exchange] {
-        guard let data = data as? [[String:Any]] else { return [] }
-        return data.compactMap { Exchange(data: $0) }
+        guard let data = data as? [String: Any],
+              let exchangesData = data["exchanges"] as? [[String:Any]] else { return [] }
+        return exchangesData.compactMap { Exchange(data: $0) }
     }
     
     // for default NetworkManager
@@ -36,11 +37,11 @@ struct Exchange: Codable {
 struct AllExchangesDescription: Codable {
     let exchanges: [Exchange]
     
-    static func transformToExchangesFrom(data: Any) -> [Exchange] {
-        guard let data = data as? [String: Any],
-              let exchangesData = data["exchanges"] else { return [] }
-        
-        let exchanges = Exchange.transformToExchanges(data: exchangesData)
-        return exchanges
-    }
+//    static func transformToExchangesFrom(data: Any) -> [Exchange] {
+//        guard let data = data as? [String: Any],
+//              let exchangesData = data["exchanges"] else { return [] }
+//        
+//        let exchanges = Exchange.transformToExchanges(data: exchangesData)
+//        return exchanges
+//    }
 }

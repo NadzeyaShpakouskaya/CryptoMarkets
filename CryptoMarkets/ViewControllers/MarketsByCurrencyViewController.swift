@@ -24,6 +24,12 @@ class MarketsByCurrencyViewController: UITableViewController {
         fetchMarketsForCurrency(id: currency.assetId ?? "")
     }
     
+    override func viewWillLayoutSubviews() {
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = true
+        self.activityIndicator.frame = self.tableView.bounds
+    }
+    
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return markets.count

@@ -20,6 +20,12 @@ class CurrenciesListViewController: UITableViewController {
         fetchAllCurrencies()
     }
     
+    override func viewWillLayoutSubviews() {
+        self.activityIndicator.translatesAutoresizingMaskIntoConstraints = true
+        self.activityIndicator.frame = self.tableView.bounds
+    }
+    
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         currencies.count

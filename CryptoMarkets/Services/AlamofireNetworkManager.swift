@@ -21,33 +21,25 @@ class AlamofireNetworkManager: NetworkManagerProtocol {
             .responseJSON { response in
                 switch response.result {
                 case .success(let data):
-                    let exchanges = AllExchangesDescription.transformToExchangesFrom(data: data)
-                    DispatchQueue.main.async {
-                        completion(.success(exchanges))
-                    }
+                    let exchanges = Exchange.transformToExchanges(data: data)
+                    completion(.success(exchanges))
                 case .failure(let error):
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                    }
+                    completion(.failure(error))
                 }
             }
     }
     
     // for practice use Alamofire Decodable Response
-    func fetchAllExchangesDecodable(url: String, completion: @escaping (Result<[Exchange], Error>) -> Void) {
+    func fetchAllExchangesDecodable(completion: @escaping (Result<[Exchange], Error>) -> Void) {
         let url = Constants.basicURL + Route.exchangesAll.rawValue
         AF.request(url)
             .validate()
             .responseDecodable(of: AllExchangesDescription.self) { response in
                 switch response.result {
                 case .success(let data):
-                    DispatchQueue.main.async {
-                        completion(.success(data.exchanges))
-                    }
+                    completion(.success(data.exchanges))
                 case .failure(let error):
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                    }
+                    completion(.failure(error))
                 }
             }
         
@@ -60,13 +52,9 @@ class AlamofireNetworkManager: NetworkManagerProtocol {
                 switch response.result {
                 case .success(let data):
                     let markets = AllMarketsDescription.transformToMarkets(data: data)
-                    DispatchQueue.main.async {
-                        completion(.success(markets))
-                    }
+                    completion(.success(markets))
                 case .failure(let error):
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                    }
+                    completion(.failure(error))
                 }
             }
     }
@@ -78,13 +66,9 @@ class AlamofireNetworkManager: NetworkManagerProtocol {
                 switch response.result {
                 case .success(let data):
                     let currencies = AllCurrenciesDescription.transformToCurrencies(data: data)
-                    DispatchQueue.main.async {
-                        completion(.success(currencies))
-                    }
+                    completion(.success(currencies))
                 case .failure(let error):
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                    }
+                    completion(.failure(error))
                 }
             }
     }
